@@ -1,6 +1,8 @@
-"""Money formatting."""
-
-
-def format_money(amount, currency="INR"):
-    symbol = {"INR": "₹", "USD": "$", "GBP": "£"}.get(currency, "")
+def format_money(amount, currency):
+    if currency == "USD":
+        symbol = "$"
+    elif currency == "EUR":
+        symbol = "€"
+    else:
+        symbol = "₹"
     return f"{symbol}{amount:,.2f}"
